@@ -1,0 +1,285 @@
+ /* General Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* Full-Height Landing Section */
+.landing-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* Container for the whole content */
+.landing-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Left Section: Logo */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 20%;
+}
+
+/* Right Section: Title and Quote */
+.text-content {
+    flex: 2;
+    padding: 20px;
+    text-align: left;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.try-now-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.try-now-button:hover {
+    background-color: #218838;
+}
+
+/* Bottom Section */
+.bio-section {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #28a745; /* Optional: change the color of the checkbox */
+    cursor: pointer;
+}
+
+/* Add hover effect for checkboxes */
+input[type="checkbox"]:hover {
+    opacity: 0.8;
+}
+
+/* Add checked state styling */
+input[type="checkbox"]:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.bio-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.category-wrapper {
+    position: relative;
+    height: 300px;
+}
+.category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+.category.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.category.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.category label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.bio-output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    font-style: italic;
+    display: none;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+#bio {
+    width: 100%;
+    max-width: 760px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#bioSection h2 {
+    text-align: center;
+}
+#bioSection p {
+    font-size: 16px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landing-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .quote {
+        font-size: 18px;
+    }
+
+    .try-now-button {
+        margin-top: 20px;
+    }
+}
+
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.progress-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 18px;
+    color: #ccc;
+    z-index: 1;
+}
+
+.progress-item.active {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.progress-item.completed {
+    background-color: #218838;
+    color: white;
+    border-color: #218838;
+}
+
+/* Horizontal Line */
+.progress-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    z-index: 0;
+}
+
+.progress-item:not(:last-child) {
+    position: relative;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
