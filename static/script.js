@@ -36,7 +36,6 @@ function generateBio() {
         bioContent.innerText = data.bio; // The generated bio
         const bioTitle = document.getElementById('bioTitle');
         bioTitle.innerText = data.title; // The generated bio Title
-
     })
     .catch(error => {
         console.error('Error generating bio:', error);
