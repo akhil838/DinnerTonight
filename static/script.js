@@ -22,7 +22,7 @@ function generateBio() {
     const payload = { hobbies, interests, professions ,personalities ,relationships };
 
     // Send data to the Flask server using fetch
-    fetch('https://dinner-tonight-az6dbgdka-akhil-kosuris-projects.vercel.app/generate_bio', {
+    fetch('https://dinner-tonight.vercel.app/generate_bio', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
