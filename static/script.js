@@ -34,6 +34,8 @@ function generateBio() {
         // Insert the generated bio into the page
         const bioContent = document.getElementById('bioContent');
         bioContent.innerText = data.bio; // The generated bio
+        const bioTitle = document.getElementById('bioTitle');
+        bioTitle.innerText = data.title; // The generated bio Title
 
     })
     .catch(error => {
