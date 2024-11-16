@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Tonight - Landing Page</title>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Landing Section -->
+    <div class="landing-section">
+        <div class="landing-container">
+            <!-- Left Section: Logo -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Dinner Tonight Logo"> <!-- Replace with actual logo path -->
+            </div>
+
+            <!-- Right Section: Title and Quote -->
+            <div class="text-content">
+                <div class="title">Dinner Tonight</div>
+                <div class="quote">"DinnerTonight is a platform that generates personalized bios based on user preferences, including their character traits, interests, and career goals."</div>
+                <a href="#bioSection" class="try-now-button">Try Now</a> <!-- Scroll to bio section -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Section (Bio Section) -->
+    <div id="bioSection" class="bio-section">
+        <div class = "bio-container">
+            <h1>Personalized Bio Generator</h1>
+            <div class="progress-indicator">
+                <div class="progress-item active" id="step1">1</div>
+                <div class="progress-item" id="step2">2</div>
+                <div class="progress-item" id="step3">3</div>
+                <div class="progress-item" id="step4">4</div>
+                <div class="progress-item" id="step5">5</div>
+            </div>
+            <form id="bioForm">
+                <div class="category-wrapper">
+                    <div class="category active" id="hobbySection">
+                        <label>Select Your Hobbies:</label>
+                        <div class="grid">
+                            <label><input type="checkbox" name="hobby" value="Photography"> Photography</label>
+                            <label><input type="checkbox" name="hobby" value="Gaming"> Gaming</label>
+                            <label><input type="checkbox" name="hobby" value="Cooking"> Cooking</label>
+                            <label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+                            <label><input type="checkbox" name="hobby" value="Traveling"> Traveling</label>
+                            <label><input type="checkbox" name="hobby" value="Gardening"> Gardening</label>
+                            <label><input type="checkbox" name="hobby" value="Drawing"> Drawing</label>
+                            <label><input type="checkbox" name="hobby" value="Writing"> Writing</label>
+                            <label><input type="checkbox" name="hobby" value="Cycling"> Cycling</label>
+                        </div>
+                        <div class="navigation">
+                            <button type="button" onclick="nextStep(0)">Next</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category" id="interestSection">
+                        <label>Select Your Interests:</label>
+                        <div class="grid">
+                            <label><input type="checkbox" name="interest" value="Technology"> Technology</label>
+                            <label><input type="checkbox" name="interest" value="Art"> Art</label>
+                            <label><input type="checkbox" name="interest" value="Sports"> Sports</label>
+                            <label><input type="checkbox" name="interest" value="Science"> Science</label>
+                            <label><input type="checkbox" name="interest" value="Music"> Music</label>
+                            <label><input type="checkbox" name="interest" value="History"> History</label>
+                            <label><input type="checkbox" name="interest" value="Literature"> Literature</label>
+                            <label><input type="checkbox" name="interest" value="Philosophy"> Philosophy</label>
+                            <label><input type="checkbox" name="interest" value="Finance"> Finance</label>
+                        </div>
+                        <div class="navigation">
+                            <button type="button" onclick="previousStep(1)">Previous</button>
+                            <button type="button" onclick="nextStep(1)">Next</button>
+                        </div>
+                    </div>
+                    
+                    <div class="category" id="professionSection">
+                        <label>Select Your Profession:</label>
+                        <div class="grid">
+                            <label><input type="checkbox" name="profession" value="Developer"> Developer</label>
+                            <label><input type="checkbox" name="profession" value="Designer"> Designer</label>
+                            <label><input type="checkbox" name="profession" value="Teacher"> Teacher</label>
+                            <label><input type="checkbox" name="profession" value="Engineer"> Engineer</label>
+                            <label><input type="checkbox" name="profession" value="Doctor"> Doctor</label>
+                            <label><input type="checkbox" name="profession" value="Nurse"> Nurse</label>
+                            <label><input type="checkbox" name="profession" value="Writer"> Writer</label>
+                            <label><input type="checkbox" name="profession" value="Artist"> Artist</label>
+                            <label><input type="checkbox" name="profession" value="Chef"> Chef</label>
+                        </div>
+                        <div class="navigation">
+                            <button type="button" onclick="previousStep(2)">Previous</button>
+                            <button type="button" onclick="nextStep(2)">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="category" id="personalitySection">
+                        <label>Select Your personality Traits:</label>
+                        <div class="grid">
+                            <label><input type="checkbox" name="personality" value="Empathetic"> Empathetic</label>
+                            <label><input type="checkbox" name="personality" value="Adventurous"> Adventurous</label>
+                            <label><input type="checkbox" name="personality" value="Reliable"> Reliable</label>
+                            <label><input type="checkbox" name="personality" value="Creative"> Creative</label>
+                            <label><input type="checkbox" name="personality" value="Ambitious"> Ambitious</label>
+                            <label><input type="checkbox" name="personality" value="Optimistic"> Optimistic</label>
+                            <label><input type="checkbox" name="personality" value="Analytical"> Analytical</label>
+                            <label><input type="checkbox" name="personality" value="Sociable"> Sociable</label>
+                        </div>
+                        <div class="navigation">
+                            <button type="button" onclick="previousStep(3)">Previous</button>
+                            <button type="button" onclick="nextStep(3)">Next</button>
+                        </div>
+                    </div>
+
+                    <div class="category" id="relationshipSection">
+                        <label>Select Your relationship Goal:</label>
+                        <div class="grid">
+                            <label><input type="checkbox" name="relationship" value="Casual"> Casual</label>
+                            <label><input type="checkbox" name="relationship" value="Long-term"> Long-term</label>
+                            <label><input type="checkbox" name="relationship" value="Adventurous"> Adventurous</label>
+                            <label><input type="checkbox" name="relationship" value="Seeking Deep Connection"> Seeking Deep Connection</label>
+                            <label><input type="checkbox" name="relationship" value="Mutual Respect"> Mutual Respect</label>
+                            <label><input type="checkbox" name="relationship" value="Lifelong Partnership"> Lifelong Partnership</label>
+                            <label><input type="checkbox" name="relationship" value="Trust and Transparency"> Trust and Transparency</label>
+                            <label><input type="checkbox" name="relationship" value="Quality Time Together"> Quality Time Together</label>
+                        </div>  
+                        <div class="navigation">
+                            <button type="button" onclick="previousStep(4)">Previous</button>
+                            <button type="button" onclick="generateBio()">Generate Bio</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+            <!-- Section to display generated bio -->
+            <div id="bio">
+                <h2>Your Generated Bio:</h2><br>
+                <p id="bioContent">Your bio will appear here once you generate it.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
