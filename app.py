@@ -28,10 +28,11 @@ def generate_bio():
     personalities = data.get('personalities', [])
     relationships = data.get('relationships', [])
     
-    response = model.generate_content(f'Generate short Bio, my hobbies are {hobbies}, im intrested in {interests}, and my professions are {professions}, my personalities are {personalities}, and my relationships goals are {relationships}')
+    response = model.generate_content(f'Create a unique and engaging dating bio along with a 2-3 word title based on the following characteristics. Keep it short maximum upto 4-5 sentences. The bio should sound natural and creative, combining personality traits, hobbies, personality traits, relationship goals and professional details into a fun, relatable narrative. Add a few lines to make the bio stand out with a hint of personality and relationship goals. Here are the details: Hobbies:{hobbies}, Interests:{interests}, Profession:{professions}, Personality:{personalities}, Relationship:{relationships}')
 
     # Create a simple bio message
-    bio_message = response.text    
-    
+    bio_message = response.text.split('\n\n')
+
     # Return the bio as a JSON response
-    return jsonify({"bio": bio_message})
+    return jsonify({"bio": bio_message[1],"title":bio_message[0].strip('**')})
+
